@@ -1,3 +1,31 @@
+# # Ignore all files without extension
+# [^.]* 
+
+# [^.]* → saare file names jo dot contain nahi karte (means no extension).
+# Example: p1, abc, temp ignore ho jaayenge.
+# Lekin p1.txt, abc.py track rahenge.
+
+# # Ignore only files without extension, not directories
+# [^.]*/    # directories ke liye (ignore mat karo)
+# [^.]*     # files ke liye
+
+
+# Ignore all files without extension
+[^.]*
+
+# But do not ignore directories (anywhere in repo)
+!*/
+
+
+# [^.]* → har wo entry ignore karega jisme dot nahi hai (ye files aur folders dono match karega).
+# !*/ → override karke bolta hai: “agar wo folder hai, toh ignore mat kar.”
+# 👉 Is combination se:
+# p1, abc, notes → ignore ✅
+# p1.txt, main.cpp → track ✅
+# src/, build/, data/test/ → track ✅
+# src/p1 (file without extension inside folder) → ignore ✅
+# src/file.txt → track ✅
+
 # Build artifacts
 *.o
 *.obj
