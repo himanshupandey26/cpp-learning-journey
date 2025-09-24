@@ -1,0 +1,72 @@
+# Build artifacts
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.lib
+*.exp
+*.ilk
+*.pdb
+*.tds
+*.out
+
+# Intermediate files
+*.lo
+*.la
+*.lai
+*.al
+*.gcno
+*.gcda
+*.gcov
+*.d
+*.i
+*.s
+*.map
+
+# IDE-specific files (examples for common IDEs)
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.ncb
+*.aps
+*.bsc
+*.sbr
+*.ipch
+*.log
+*.VC.db
+*.VC.opendb
+*.vcxproj.user
+*.vcxproj.filters
+
+# Xcode
+build/
+*.pbxuser
+*.xcuserdatad
+*.xcworkspace
+*.xcscheme
+
+# Eclipse
+.project
+.cproject
+.settings/
+*.launch
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+CTestTestfile.cmake
+_CPack_Packages/
+
+# Other common exclusions
+*~
+*.bak
+*.swp
+*.tmp
+*.DS_Store
+Thumbs.db
