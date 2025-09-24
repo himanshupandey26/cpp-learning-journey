@@ -28,6 +28,7 @@
 # IDE-specific files (examples for common IDEs)
 
 # Visual Studio
+.vscode
 .vs/
 *.suo
 *.user
