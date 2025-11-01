@@ -1,0 +1,23 @@
+alias run='f(){ \
+QUIET=0; \
+if [ "$1" = "-q" ]; then QUIET=1; shift; fi; \
+if [ -n "$1" ]; then FILE="$1"; else FILE=$(ls -t *.cpp 2>/dev/null | head -1); fi; \
+if [ -z "$FILE" ]; then \
+  echo -e "\033[1;31m❌ No .cpp file found.\033[0m"; \
+else \
+  if [ $QUIET -eq 0 ]; then echo -e "\033[1;34m▶️ Compiling and running: $FILE\033[0m"; fi; \
+  g++ "$FILE" -o /tmp/temp 2> /tmp/err; \
+  if [ $? -eq 0 ]; then \
+    if [ -f input.txt ]; then \
+      /tmp/temp < input.txt; \
+    else \
+      /tmp/temp; \
+    fi; \
+    rm -f /tmp/temp; \
+    if [ $QUIET -eq 0 ]; then echo -e "\033[1;32m✅ Execution finished successfully!\033[0m"; fi; \
+  else \
+    if [ $QUIET -eq 0 ]; then echo -e "\033[1;31m❌ Compilation failed:\033[0m"; fi; \
+    cat /tmp/err; \
+  fi; \
+  rm -f /tmp/err; \
+fi; }; f'
